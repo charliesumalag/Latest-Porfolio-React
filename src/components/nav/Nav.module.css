@@ -1,0 +1,55 @@
+.navContainer{
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 180rem;
+    /* border: 1px solid violet; */
+    height: 100%;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.logoText{
+    font-size: 2.2rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+.navLinks{
+    display: flex;
+    gap: 4rem;
+}
+.navLinks .navLink a{
+    font-size: 1.8rem;
+    font: medium;
+    transition: all 0.3s ease;
+}
+.navLinks .navLink a:hover{
+    color: #e85e47;
+}
+.onlinePlatform{
+    display: flex;
+    font-size: 2rem;
+    gap: 0.5rem;
+}
+.onlinePlatform li{
+    font-size: 2.2rem;
+    color: white;
+    opacity: 0.9;
+    cursor: pointer;
+    width: 3rem;
+    transition: all 0.3s ease;
+}
+.onlinePlatform li:hover{
+    transform: scale(1.3);
+    color: #e85e47
+}
