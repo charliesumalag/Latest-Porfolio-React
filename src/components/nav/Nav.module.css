@@ -28,13 +28,14 @@
     display: flex;
     gap: 4rem;
 }
-.navLinks .navLink a{
+.navLinks .navLink{
     font-size: 1.8rem;
     font: medium;
     transition: all 0.3s ease;
 }
-.navLinks .navLink a:hover{
+.navLinks .navLink:hover{
     color: #e85e47;
+    cursor: pointer;
 }
 .onlinePlatform{
     display: flex;

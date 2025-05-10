@@ -1,0 +1,52 @@
+.contentsContainer{
+    margin-left: 6rem;
+}
+.contentsWrapper{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.contentsContainer ul li{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+
+}
+.contentsContainer ul li p{
+    font-size: 1.6rem;
+    font-weight: lighter;
+    line-height: 30px;
+}
+.descriptionContainer{
+    margin-bottom: 3rem;
+}
+.description{
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+.contentsContainer p{
+    font-weight: 1.2rem;
+    opacity: 0.7;
+}
+.view{
+    padding-left: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    font-size: inherit;
+    flex: auto;
+    background-color: white;
+}
+.bottomStick {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+.view:hover{
+    color: #FD715A;
+}
+.contentsContainer ul{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-scroll';
 import styles from "./Nav.module.css";
 import logo from "/img/logo.png";
 
@@ -6,7 +7,7 @@ const Nav = () => {
   return (
     <div className={styles.navContainer}>
         <div className={styles.nav}>
-            <div className={styles.logo}>
+            <div className={styles.logo} >
                 <div className={styles.imgContainer}>
                     <img src={logo} alt="" />
                 </div>
@@ -14,11 +15,11 @@ const Nav = () => {
             </div>
             <nav>
                 <ul className={styles.navLinks}>
-                    <li className={styles.navLink}><a href="">Home</a></li>
-                    <li className={styles.navLink}><a href="">Projects</a></li>
-                    <li className={styles.navLink}><a href="">Certificates</a></li>
-                    <li className={styles.navLink}><a href="">About</a></li>
-                    <li className={styles.navLink}><a href="">Contact</a></li>
+                    <li className={styles.navLink}><Link to='hero' smooth={true} duration={500}>Home</Link></li>
+                    <li className={styles.navLink}><Link to='projects' smooth={true} duration={500}>Projects</Link></li>
+                    <li className={styles.navLink}><Link to='certificates' smooth={true} duration={500}>Certificates</Link></li>
+                    <li className={styles.navLink}><Link to='about' smooth={true} duration={500}>About</Link></li>
+                    <li className={styles.navLink}><Link to='contact' smooth={true} duration={500}>Contact</Link></li>
                 </ul>
             </nav>
             <ul className={styles.onlinePlatform}>

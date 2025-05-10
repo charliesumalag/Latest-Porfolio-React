@@ -26,3 +26,6 @@ li{
   color: inherit;
   font-size: inherit;
 }
+button{
+  cursor: pointer;
+}

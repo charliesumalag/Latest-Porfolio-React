@@ -1,0 +1,66 @@
+.certificatesMainContainer{
+    color: #2E292F;
+    padding: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.certificateContents{
+    width: 120rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.certificateContents h2{
+    font-size: 4rem;
+}
+.certificateContents h2 span{
+    color: #FD715A;
+}
+.certificates{
+    display: flex;
+    /* gap: 2.2rem; */
+}
+
+.titlesContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* margin-top: 1rem; */
+
+  }
+  .lineContainer {
+    position: relative;
+    width: 2px;
+  }
+  .titlesContainer li {
+    font-size: 2rem;
+    font-weight: 600;
+    cursor: pointer;
+    height: 50px;
+    transition: color 0.3s ease, font-weight 0.3s ease;
+  }
+.active {
+    font-weight: bold;
+    color: #FD715A;
+  }
+  /* .vline {
+    width: 2px;
+    background-color: #2E292F;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 1px;
+    z-index: 0;
+    border: 1px solid green;
+  } */
+  /* .indicator {
+    position: absolute;
+    left: 1px;
+    width: 2px;
+    height: 55px;
+    background-color: #FD715A;
+    transition: top 0.3s ease;
+    z-index: 1;
+  } */

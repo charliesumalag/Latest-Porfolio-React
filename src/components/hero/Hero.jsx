@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-scroll';
 import styles from './Hero.module.css';
 import Nav from '../nav/Nav';
 import arrow from "/img/Arrow.png";
@@ -40,13 +41,21 @@ const Hero = () => {
       <div className={styles.heroContents}>
         <Nav />
         <div className={styles.heroCenterContents}>
-          <h2 className={styles.first}>HELLO I'M</h2>
-          <h1>Charlie <span className={styles.lastName}>Sumalag</span></h1>
-          <img src={arrow} alt="" />
-          <span className={styles.copyright}>&copy;</span>
-          <h2 className={styles.third}>A Passionate <span>{displayText}</span></h2>
-          <div className={styles.btnContainer}>
-            <button className={styles.myworks}>MY WORKS</button>
+          <h2 className={styles.first}  data-aos="fade-up">HELLO I'M</h2>
+          <h1>
+            <span className={styles.myName}  data-aos="fade-up">
+              <span className={styles.firstNameContainer}>Charlie
+                <img className={styles.arrow} src={arrow} alt="" />
+              </span>
+              <span className={styles.lastNameContainer}>Sumalag
+                  <span className={styles.copyright}>&copy;</span>
+              </span>
+            </span>
+          </h1>
+
+          <h2 className={styles.third}  data-aos="fade-up">A Passionate <span>{displayText}</span></h2>
+          <div className={styles.btnContainer}  data-aos="fade-up">
+            <Link to='projects' smooth={true} duration={500}><button className={styles.myworks}>My Works</button></Link>
             <button className={styles.resume} >RESUME</button>
           </div>
         </div>

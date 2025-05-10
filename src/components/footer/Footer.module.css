@@ -1,0 +1,98 @@
+.footerWrapper{
+    color: #2E292F;
+    padding: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.footerContainer{
+    width: 120rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.footerContainer h2{
+    font-size: 2.2rem;
+}
+.footerContainer h2 span{
+    color: #FD715A;
+}
+
+.footerContents{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footerContainer .btnContainer{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+.footerContainer .btnContainer button{
+    padding: 1.3rem 4.2rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+    border-radius: 0.3rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.myworks{
+    background-color: #FD715A;
+    border: 1px solid #FD715A;
+    color: white;
+    position: relative;
+    z-index: 1;
+    transition: 0.5s;
+}
+.resume{
+    border: 1px solid #2E292F;
+    background-color: transparent;
+    color: #2E292F;
+    position: relative;
+    z-index: 1;
+    transition: 0.5s;
+    cursor: pointer !important;
+}
+.footerContainer .btnContainer .myworks::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #e85e47;
+    z-index: -1;
+    transform-origin: left;
+    transition: transform 0.5s ease;
+    transform: scaleX(0);
+}
+.footerContainer .btnContainer .resume::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #e85e47;
+    border-radius: 0.3rem;
+    z-index: -1;
+    transform-origin: right;
+    transition: transform 0.5s ease;
+    transform: scaleX(0);
+}
+.footerContainer .btnContainer .myworks:hover::before, .footerContainer .btnContainer .resume:hover::before{
+    transform-origin: left;
+    transition: transform 0.5s ease;
+    transform: scale(1);
+}
+.resume:hover{
+    border: 1px solid white;
+    color: white;
+
+}
+.allrightsContainer{
+    color: inherit;
+    opacity: 0.7;
+    font-size: 1.4rem;
+}
