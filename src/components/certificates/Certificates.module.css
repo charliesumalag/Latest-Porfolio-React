@@ -15,11 +15,11 @@
     font-size: 4rem;
 }
 .certificateContents h2 span{
-    color: #FD715A;
+    color: var(--primary-color);
 }
 .certificates{
     display: flex;
-    /* gap: 2.2rem; */
+    gap: 3rem;
 }
 
 .titlesContainer {
@@ -27,8 +27,6 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    /* margin-top: 1rem; */
-
   }
   .lineContainer {
     position: relative;
@@ -43,24 +41,68 @@
   }
 .active {
     font-weight: bold;
-    color: #FD715A;
+    color: var(--primary-color);
   }
-  /* .vline {
-    width: 2px;
-    background-color: #2E292F;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 1px;
-    z-index: 0;
-    border: 1px solid green;
-  } */
-  /* .indicator {
-    position: absolute;
-    left: 1px;
-    width: 2px;
-    height: 55px;
-    background-color: #FD715A;
-    transition: top 0.3s ease;
-    z-index: 1;
-  } */
+
+
+@media (max-width: 992px) {
+  .certificateContents h2{
+    font-size: 3.6rem;
+  }
+
+    .projectContents h2{
+        font-size: 3.6rem;
+    }
+    .projectText h4{
+    font-size: 2.4rem;
+    }
+    .projectText p{
+        font-size: 1.6rem;
+    }
+}
+
+/* Tablets (portrait) */
+@media (max-width: 768px) {
+    .projectLists{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3rem;
+    }
+    .projectContents h2{
+        font-size: 3.2rem;
+    }
+    .projectText h4{
+        font-size: 2.2rem;
+    }
+    .projectText p{
+        font-size: 1.5rem;
+    }
+
+}
+
+/* Small devices (phones) */
+@media (max-width: 576px) {
+    .projectContents h2{
+        font-size: 2.9rem;
+    }
+     .projectText h4{
+        font-size: 1.8rem;
+    }
+    .projectText p{
+        font-size: 1.3rem;
+    }
+}
+
+/* Extra small (very old/small phones or tight layouts) */
+@media (max-width: 400px) {
+    .projectContents h2{
+        font-size: 2.6rem;
+    }
+     .projectText h4{
+        font-size: 1.6rem;
+    }
+    .projectText p{
+        font-size: 1.2rem;
+    }
+
+}

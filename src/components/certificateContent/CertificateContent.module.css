@@ -9,44 +9,42 @@
 .contentsContainer ul li{
     display: flex;
     align-items: center;
-    gap: 2rem;
-
-
+    gap: 1rem;
 }
 .contentsContainer ul li p{
     font-size: 1.6rem;
-    font-weight: lighter;
-    line-height: 30px;
+    font-weight: 400;
 }
 .descriptionContainer{
     margin-bottom: 3rem;
 }
 .description{
     font-size: 1.8rem;
-    font-weight: 500;
+    font-weight: 600;
 }
 .contentsContainer p{
     font-weight: 1.2rem;
-    opacity: 0.7;
 }
 .view{
     padding-left: 2rem;
     cursor: pointer;
-    transition: all 0.3s ease;
+    font-size: 1.6rem;
+    background-color: var(--seconday-color);
     border: none;
-    font-size: inherit;
-    flex: auto;
-    background-color: white;
+    font-weight: 600;
 }
 .bottomStick {
     margin-top: 2rem;
     margin-bottom: 1rem;
   }
 .view:hover{
-    color: #FD715A;
+    color: var(--primary-color);
 }
 .contentsContainer ul{
     display: flex;
     flex-direction: column;
     gap: 2rem;
+}
+.par{
+    font-style: 1.6rem;
 }

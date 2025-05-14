@@ -4,13 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
     "aos": "^2.3.4",
+    "motion": "^12.11.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-scroll": "^1.9.3"

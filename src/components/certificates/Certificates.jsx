@@ -1,18 +1,16 @@
 import React, {useState} from 'react'
 import styles from './Certificates.module.css';
+import { motion } from 'framer-motion';
 import CertificateContent from '../certificateContent/CertificateContent';
 
-
 const Certificates = () => {
-    // Static list of certificates titles (li items)
-    const certificatesLinks = [
-      { id: 1, title: 'Web Design' },
-      { id: 2, title: 'HTML & CSS' },
-      { id: 3, title: 'PHP' },
-      { id: 4, title: 'Laravel' },
-      { id: 5, title: 'React & Next Js' },
-    ];
-
+  const certificatesLinks = [
+    { id: 1, title: 'Web Design' },
+    { id: 2, title: 'HTML & CSS' },
+    { id: 3, title: 'PHP' },
+    { id: 4, title: 'Laravel' },
+    { id: 5, title: 'React & Next Js' },
+  ];
   const certificatesData = [
     {
       id: 2,
@@ -69,29 +67,51 @@ const Certificates = () => {
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
-
-
   const [selectedCertificate, setSelectedCertificate] = useState(certificatesData.at(4))
-
   const handleCertificateClick = (id, index) => {
 
     const certificate = certificatesData.find((cert) => cert.id === id);
     setSelectedCertificate(certificate);
     setActiveIndex(index);
   };
+   const container = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 50 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.3, ease: 'easeInOut' },
+    },
+  };
 
   return (
   <div className={styles.certificatesMainContainer}>
-    <div className={styles.certificateContents}  data-aos="fade-up">
-      <h2 data-aos="fade-up">My Certificates<span>.</span></h2>
+  <motion.div className={styles.certificateContents}
+  variants={container}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true, amount: 0.2 }} >
+    <motion.h2
+    variants={item}> My Certificates<span>.</span></motion.h2>
       <div className={styles.certificates}>
-        <div className={styles.lineContainer} data-aos="fade-up">
-          <div className={styles.vline}></div>
-          <div className={styles.indicator} style={{ top: `${activeIndex * 72}px` }}></div>
-        </div>
-        <ul className={styles.titlesContainer} data-aos="fade-up">
+        <ul className={styles.titlesContainer}>
           {certificatesLinks.map((certificate, index) => (
-            <li onClick={() => handleCertificateClick(certificate.id, index)}  className={index === activeIndex ?styles.active : ''}>{certificate.title}</li>
+            <motion.li
+              onClick={() => handleCertificateClick(certificate.id, index)}
+              className={index === activeIndex ?styles.active : ''}
+              variants={item}
+            >
+              {certificate.title}
+            </motion.li>
           ))}
         </ul>
         {selectedCertificate && (
@@ -102,7 +122,7 @@ const Certificates = () => {
           link={selectedCertificate.link}/>
         )}
       </div>
-    </div>
+    </motion.div>
   </div>
   )
 }

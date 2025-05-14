@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 *, *::before, *::after{
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
+:root {
+  --primary-color: #8731F4;
+  --secondary-color: #24262F;
+  --hover-color: #9b56f5;
+
+}
 
 html{
   font-size: 62.5%;
@@ -13,8 +19,9 @@ html{
 body{
   font-size: 1.6rem;
   line-height: 1.5;
-  color: white;
-  font-family: "Mulish", sans-serif;
+  color: black;
+  /* font-family: "Mulish", sans-serif; */
+    font-family: "Poppins", sans-serif;
 }
 a{
   color: inherit;

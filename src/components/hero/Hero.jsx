@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import { motion, stagger } from "framer-motion";
 import { Link } from 'react-scroll';
 import styles from './Hero.module.css';
 import Nav from '../nav/Nav';
-import arrow from "/img/Arrow.png";
-import arrow1 from "/img/Arrow1.png";
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState('');
@@ -35,39 +34,60 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, [index, isDeleting, speed]);
 
+  const parent = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  }
+  const child = {
+    hidden: { opacity: 0},
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  }
+  const item = {
+    hidden: { opacity: 0, y: 30 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeInOut" } },
+  };
 
   return (
     <div className={styles.heroContainer}>
-      <div className={styles.heroContents}>
+      <motion.div className={styles.heroContents} variants={parent} initial="hidden" whileInView="show"   viewport={{ once: true }}>
         <Nav />
-        <div className={styles.heroCenterContents}>
-          <h2 className={styles.first}  data-aos="fade-up">HELLO I'M</h2>
-          <h1>
-            <span className={styles.myName}  data-aos="fade-up">
-              <span className={styles.firstNameContainer}>Charlie
-                <img className={styles.arrow} src={arrow} alt="" />
-              </span>
+        <motion.div className={styles.heroCenterContents} variants={child} >
+          <motion.h2 className={styles.first} variants={item}>HELLO I'M</motion.h2>
+          <motion.h1 variants={item}>
+            <span className={styles.myName}>
+              <span className={styles.firstNameContainer}>Charlie</span>
               <span className={styles.lastNameContainer}>Sumalag
                   <span className={styles.copyright}>&copy;</span>
               </span>
             </span>
-          </h1>
-
-          <h2 className={styles.third}  data-aos="fade-up">A Passionate <span>{displayText}</span></h2>
-          <div className={styles.btnContainer}  data-aos="fade-up">
-            <Link to='projects' smooth={true} duration={500}><button className={styles.myworks}>My Works</button></Link>
-            <button className={styles.resume} >RESUME</button>
-          </div>
-        </div>
-        <div className={styles.based}>
-          <p>14.5995 N, 120.9842 S</p>
-          <h4>MANILA, PHILIPPINES</h4>
-        </div>
-        <div className={styles.scrollContainer}>
-          <img src={arrow1} alt="" />
-          <p className={styles.scroll}>SCROLL</p>
-        </div>
-      </div>
+          </motion.h1>
+          <motion.h2 className={styles.third} variants={item}>A Passionate <span>{displayText}</span></motion.h2>
+          <motion.div className={styles.btnContainer} variants={child} >
+            <Link to='contact' smooth={true} duration={500}><motion.button className={styles.myworks} variants={item}>Get In Touch</motion.button></Link>
+            <motion.button className={styles.resume}  variants={item}>Browse Projects</motion.button>
+          </motion.div>
+        </motion.div>
+        <motion.div className={styles.heroSectionBottom} variants={child}>
+          <motion.div className={styles.based} variants={child}>
+            <motion.p variants={item}>14.5995 N, 120.9842 S</motion.p>
+            <motion.h4 className={styles.basedHead} variants={item}>MANILA, PHILIPPINES</motion.h4>
+          </motion.div>
+          <motion.div className={styles.scrollContainer} variants={item}>
+            <p className={styles.scroll}>SCROLL <i class="fa-solid fa-arrow-down"></i></p>
+          </motion.div>
+        </motion.div>
+      </motion.div>
     </div>
   )
 }
